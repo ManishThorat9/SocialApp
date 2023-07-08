@@ -4,6 +4,16 @@ const format = require('date-format')
 
 const app = express()
 
+// swaggerdocs related
+const swaggerUi = require('swagger-ui-express');
+const fs = require("fs")
+const YAML = require('yaml');
+const file  = fs.readFileSync('./swagger.yaml', 'utf8');
+const swaggerDocument = YAML.parse(file);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// app.use -is middleware 
+
+
 const PORT = process.env.PORT || 4000;
 app.set('view engine', 'ejs');
 
