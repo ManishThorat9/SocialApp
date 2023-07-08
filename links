@@ -1,1 +1,6 @@
 date-format doc =  https://www.npmjs.com/package/date-format?activeTab=code
+{
+  nodemon.json:-
+  this file created for nodemon monitor all this extension file and if any 
+  change in this file save and run update
+}
